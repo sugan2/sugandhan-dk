@@ -1,1 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D Sugandhan | Python Automation & RPA Engineer Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        code: ['Fira Code', 'monospace']
+                    },
+                    colors: {
+                        darkBg: '#0a0f1d',
+                        cardBg: '#131c31',
+                        accent: '#3b82f6',
+                        accentGlow: '#60a5fa'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0f1d;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        /* Custom Glowing Card Hover */
+        .glass-card {
+            background: rgba(19, 28, 49, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.3);
+        }
+        /* Canvas Background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
 
+    <!-- Interactive Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="content-layer">
+        <!-- Navigation Bar -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <a href="#" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
+                    &lt;DS.Dev /&gt;
+                </a>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projects & Case Studies</a>
+                    <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all">Get in Touch</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center pt-24 pb-16 px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-blue-400"></span> Available for Automation & Engineering Roles
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                    Hi, I'm <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">D Sugandhan</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light mb-10 leading-relaxed">
+                    Python Automation & RPA Engineer specializing in enterprise <span class="text-slate-200 font-medium">SAP GUI scripting</span>, robust <span class="text-slate-200 font-medium">web scraping</span>, and high-performance financial data pipelines.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-xl shadow-blue-600/30 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-code"></i> Explore Case Studies
+                    </a>
+                    <a href="mailto:iamsugan98@gmail.com" class="px-8 py-4 rounded-xl glass-card text-slate-200 hover:text-white font-semibold transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack / Skills Section -->
+        <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Expertise</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Core frameworks, automation tools, and programming stacks utilized in professional environments.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Category 1 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl mb-4">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-200">Automation & RPA</h3>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-xs"></i> SAP GUI Scripting API</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-xs"></i> PyWinAuto & pyRFC</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-xs"></i> Selenium WebDriver</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400 text-xs"></i> Web Scrapy & HTTPx</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 2 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-xl mb-4">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-200">Languages & Backend</h3>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Python (Advanced)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> SQL & Database Queries</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Flask & REST APIs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Git, GitLab & GitHub</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 3 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-4">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-200">Data Engineering</h3>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> Pandas & NumPy</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> OpenPyXL & XLWings</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> VBA Macros & Pivot Tables</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400 text-xs"></i> Automated Audit Reports</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 4 -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3 text-slate-200">AI & Testing</h3>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> PyTorch & TensorFlow</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> LangChain & LangGraph</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Pytest Unit Testing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400 text-xs"></i> NLP Model Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Case Studies Section -->
+        <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects & Case Studies</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Explore enterprise automation frameworks and full-stack software development work[cite: 1, 2].</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold">Enterprise RPA</span>
+                            <span class="text-slate-500 text-xs font-mono">Beez Innovation Labs</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-100">Enterprise SAP & SOX Compliance Automation</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Automated critical SOX control processes (RTR016, IT.CM.6 SE16N, OTC028) in SAP, streamlining tax reporting, financial consolidation, and robust audit trail validation[cite: 1].
+                        </p>
+                        <div class="bg-darkBg/80 p-4 rounded-xl border border-slate-800 font-code text-xs text-blue-300 mb-6 overflow-x-auto">
+<code>class SAPAutomationBot:
+    def connect_sap_gui(self):
+        sap_gui = win32com.client.GetObject("SAPGUI")
+        application = sap_gui.GetScriptingEngine
+        connection = application.Children(0)
+        self.session = connection.Children(0)</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">PyWinAuto</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">pyRFC</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold">Web Automation</span>
+                            <span class="text-slate-500 text-xs font-mono">Beez Innovation Labs</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-100">Dynamic Web Scraping & Automation Engine</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Developed Selenium and Scrapy automation scripts across enterprise portals (DutyFree, SysAid) to execute automated form submissions, AJAX element handling, and high-throughput data extraction[cite: 2].
+                        </p>
+                        <div class="bg-darkBg/80 p-4 rounded-xl border border-slate-800 font-code text-xs text-indigo-300 mb-6 overflow-x-auto">
+<code>driver.get("https://portal-target.com")
+wait = WebDriverWait(driver, 15)
+element = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@id='submit']")))
+element.click()</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Selenium</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Scrapy</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">HTTPx</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold">Data Pipeline</span>
+                            <span class="text-slate-500 text-xs font-mono">eMachineShop</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-100">High-Volume Excel & Financial Pipeline</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Automated complex financial reporting workflows, raw data extraction, and validation models using Pandas, openpyxl, xlwings, and custom VBA macros[cite: 1, 2].
+                        </p>
+                        <div class="bg-darkBg/80 p-4 rounded-xl border border-slate-800 font-code text-xs text-cyan-300 mb-6 overflow-x-auto">
+<code>import pandas as pd
+import openpyxl
+
+df = pd.read_excel("raw_financials.xlsx")
+clean_df = df.dropna(subset=['Transaction_ID'])
+clean_df.to_excel("audit_ready_report.xlsx", index=False)</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Pandas</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">OpenPyXL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">VBA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold">AI Full Stack</span>
+                            <span class="text-slate-500 text-xs font-mono">Personal Project</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-100">AI-Based Resume Generator Web App</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Full-stack application leveraging NLP and pre-trained language models to analyze job descriptions and automatically tailor candidate summaries and skill sets[cite: 2].
+                        </p>
+                        <div class="bg-darkBg/80 p-4 rounded-xl border border-slate-800 font-code text-xs text-purple-300 mb-6 overflow-x-auto">
+<code>@app.route('/generate', methods=['POST'])
+def generate_resume():
+    job_desc = request.form.get('job_description')
+    tailored_text = nlp_model.analyze_and_align(job_desc)
+    return jsonify({'status': 'success', 'summary': tailored_text})</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Flask</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">NLP</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs">Transformers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="py-24 px-6 max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+                <p class="text-slate-400">Track record of engineering robust automation solutions[cite: 1, 2].</p>
+            </div>
+            <div class="space-y-8 border-l-2 border-slate-800 ml-4 md:ml-8 pl-6 md:pl-8">
+                <!-- Job 1 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-darkBg"></span>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-100">Software Engineer</h3>
+                            <span class="text-sm font-semibold text-blue-400">Nov 2024 - Present</span>
+                        </div>
+                        <h4 class="text-slate-300 font-medium mb-4">eMachineShop</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Automating Excel-based workflows, financial data processing, and validation pipelines using Pandas, openpyxl, xlwings, and VBA macros to eliminate manual reporting overhead[cite: 1, 2].
+                        </p>
+                    </div>
+                </div>
+                <!-- Job 2 -->
+                <div class="relative">
+                    <span class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-darkBg"></span>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-100">Junior Software Engineer</h3>
+                            <span class="text-sm font-semibold text-indigo-400">Feb 2024 - Oct 2024</span>
+                        </div>
+                        <h4 class="text-slate-300 font-medium mb-4">Beez Innovation Labs</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Designed and deployed RPA solutions for SAP GUI automation, web scraping data pipelines with Scrapy, and DMS integrations using HTTPx[cite: 1].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+            <div class="glass-card p-12 rounded-3xl border border-blue-500/20 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Impactful</h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                    Looking for a dedicated Python Automation or RPA Engineer? Reach out directly via email or connect on LinkedIn.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:iamsugan98@gmail.com" class="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all flex items-center gap-2 shadow-lg shadow-blue-600/30">
+                        <i class="fa-solid fa-envelope"></i> iamsugan98@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/sugandhan-dk-a3645b2a0" target="_blank" class="px-8 py-4 rounded-xl glass-card text-slate-200 hover:text-white font-semibold transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-slate-800 text-center text-sm text-slate-500">
+            <p>&copy; 2026 D Sugandhan. Built with Python, Tailwind CSS & GitHub Pages.</p>
+        </footer>
+    </div>
+
+    <!-- Particle Animation Script -->
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(59, 130, 246, 0.4)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 70; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Connect nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
